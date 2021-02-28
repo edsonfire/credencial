@@ -1,15 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchCredencial } from '../api';
-
-import { Credencialp } from "../Types";
-import Card1 from './card';
+import Card from './card';
+import { Credencialp, Product } from "./Types";
 
 
 interface RouteParams {
     id: string
 }
-  
 
 function CardCredencial(){
    
@@ -17,24 +15,28 @@ function CardCredencial(){
 
 
 
-    const [credencialP, setCredencialP] = useState<Credencialp>();
+    const [credencialP, setCredencialP] = useState<Credencialp>({nome:"edson"});
 
     useEffect(()=>{
         
         fetchCredencial(Number(id)).
-        then(response=>setCredencialP(response.data))
-       
+        then(response=>setCredencialP(response.data)
+        
+        )
+        
     })
 
 
 return  (
 <>
 <div>
-    <Card1 credencialP={credencialP}
-    ></Card1>
+  olá, {credencialP?.nome}
 
-    <p>ola, {credencialP?.nome}</p>
-    
+<br/>
+<Card cargo="teste" nome="edson" credencial={credencialP} ></Card>
+
+  
+
 </div>
 </>
 )}

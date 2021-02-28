@@ -1,22 +1,25 @@
-import { Credencialp } from "../Types"
 import {Component} from 'react';
 import { useParams } from "react-router-dom";
-
+import { Credencialp, Product } from "./Types"
+import { string } from "prop-types";
 
 type Props = {
 
-    credencialP: Credencialp;
+    nome:string;
+    cargo:string;
+credencial:Credencialp;
    
 }
 
-function Card1({credencialP} :Props ){
+function Card({nome, cargo, credencial} :Props ){
 
 
     return (
             <div className="row">
                     <div className="form-control">
-                        <label>Nome - {credencialP.nome}</label>
-                        <label>{credencialP.cargo}</label>
+                        <label>Nome - {nome}</label>
+                       <p>Recendo { credencial.nome}</p>
+                       <p>Recendo { credencial.cargo}</p>
                     </div>
 
             </div>
@@ -27,5 +30,5 @@ function Card1({credencialP} :Props ){
 
     
 }
-export default Card1;
+export default Card;
 

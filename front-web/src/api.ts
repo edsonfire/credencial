@@ -1,5 +1,6 @@
 import axios from "axios";
-import { CredencialPayload, Credencialp } from "./Types";
+import { CredencialPayload } from "./CardCredencial/Types";
+
 
 const API_URL = 'http://localhost:8080';
 /*const API_URL = 'http://localhost:8080';*/
