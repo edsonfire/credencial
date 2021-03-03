@@ -1,3 +1,4 @@
+import './style.css';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchCredencial } from '../api';
@@ -33,7 +34,17 @@ return  (
   olá, {credencialP?.nome}
 
 <br/>
+<div className="container">
+<div className="row">
 <Card cargo="teste" nome="edson" credencial={credencialP} ></Card>
+
+
+</div>
+
+
+
+</div>
+
 
   
 

@@ -1,0 +1,66 @@
+.container {
+justify-content: center;
+
+
+}
+
+
+.container-card{
+    max-width: 400px;
+    width: 100%;
+    background-color: #F0FAD5;
+    margin: auto;
+}
+
+.container-head{
+
+    background: #76CB98;
+    border-radius: 5px;
+    text-align: center;
+    margin: auto;
+}
+.container-head p{
+margin-bottom: 0px;
+    font-family: Lato;
+font-style: normal;
+font-weight: bold;
+font-size: 22px;
+line-height: 26px;
+text-align: center;
+}
+.container-head-text{
+    font-size: 10px;
+    margin-bottom: 0px;
+}
+.container-head-text-f{
+    font-size: 10px;
+}
+.mgp{
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    padding-left: 5px;
+    padding-right: 5px;
+
+}
+
+.container-input{
+    background: #E6E6FF;
+border-radius: 5px;
+min-height: 30px;
+width: 100%;
+margin-right: 5px;
+    margin-left: 0px;
+    margin-bottom: 20px;
+}
+
+.container-input p{
+    width: 100%;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+.card-label{
+    font-size: 10px;
+}
+.form-text{
+    font-size: 10px;
+}
