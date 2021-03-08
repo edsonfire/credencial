@@ -17,17 +17,17 @@ function Card({nome, cargo, credencial} :Props ){
 
     return (
             <>
-            <div className="col-md-2">
+            <div className="col-md-4">
             <div className="container-head">
                 <p>Credencial de Ministro</p>
             </div>
             <div className="container-card">
                 <div className="row">
-                    <div className="col-md-3">
+                    <div className="col-2">
                         <Logo></Logo>
                     </div>
 
-                    <div className="col-md-9 text-center">
+                    <div className="col-9 text-center">
                     <h3>CONAMAD</h3>
                     <p className="container-head-text">CONVEÇÃO NACIONAL DAS ASSEMBLÉIAS DE DEUS NO BRASIL</p>    
                     <h5>MINISTÉRIO DE MADUREIRA</h5>
