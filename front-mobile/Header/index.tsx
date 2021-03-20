@@ -30,7 +30,7 @@ export default function Header() {
 const styles = StyleSheet.create({
   container: {
         backgroundColor:'#76CB98',
-      height:90,
+      height:80,
       paddingTop:50,
       flexDirection:'row',
       justifyContent:'center',
@@ -42,12 +42,13 @@ const styles = StyleSheet.create({
     marginLeft:5,
     fontStyle: 'normal',
 fontWeight: 'normal',
-fontSize: 22,
-lineHeight: 26,
+fontSize: 19,
+lineHeight: 19,
 display: 'flex',
 alignItems: 'flex-end',
 textAlign: 'center'
   
   }
+
 });
 

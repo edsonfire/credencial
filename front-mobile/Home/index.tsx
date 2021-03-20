@@ -2,7 +2,9 @@ import { useNavigation } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
-import { RectButton } from 'react-native-gesture-handler';
+import { RectButton, TextInput } from 'react-native-gesture-handler';
+import Footer from '../Footer';
+import Formc from '../Formc';
 import Header from '../Header';
 import Subheader from '../Subheader'
 
@@ -22,9 +24,8 @@ import Subheader from '../Subheader'
     <>
      <Header></Header>
      <Subheader></Subheader>
-            <View style={styles.container}>
-                    <Text>esta é a home</Text>                              
-            </View>
+        <Formc></Formc>
+    <Footer></Footer>
 
     </>
 
@@ -36,7 +37,13 @@ const styles = StyleSheet.create({
     
         container: {
           marginTop: '5%',
-          alignItems: 'center'
+          alignItems: 'center',
+          flexDirection:'row',
+        },
+        container2: {
+          marginTop: '0',
+          alignItems: 'center',
+          flexDirection:'row',
         },
         title: {
           color: '#263238',
@@ -71,8 +78,38 @@ const styles = StyleSheet.create({
           fontSize: 18,
           color: '#FFF',
           letterSpacing: -0.24
+        },
+        inpt:{
+          backgroundColor:'#E6E6FF',
+          borderBottomLeftRadius:5,
+          borderBottomRightRadius:5,
+          paddingLeft:5
+        },
+        cfield:{
+          width:'33%',
+          paddingLeft: 5,
+          paddingRight:5,
+          
+
+        },
+        ctitle:{
+          width:'33%',
+          paddingLeft: 5,
+          paddingRight:5,
+       
+         
+
+        }, 
+        ctext:{
+          borderTopLeftRadius:5,
+          borderTopRightRadius:5,
+          fontSize:10,
+          backgroundColor:'#E6E6FF',
+          paddingLeft:5,
+          fontWeight:'bold'
         }
-      
+        
+        
   
 
 });
