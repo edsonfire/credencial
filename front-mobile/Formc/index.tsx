@@ -31,7 +31,7 @@ export default function Formc({credencial}:Props){
   const navigation = useNavigation();
 
   const handleOnPress = () => {
-    navigation.navigate('Qrcode');
+    navigation.navigate('Qrcode', {cod:credencial.matriula});
   
   }
 

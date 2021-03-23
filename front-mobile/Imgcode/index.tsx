@@ -1,12 +1,21 @@
 import { useNavigation } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, Button } from 'react-native';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import QRCode from 'react-native-qrcode-svg';
 
 
-export default function Imgcode() {
+
+
+
+type Props={
+
+  cod:string;
+}
+
+
+export default function Imgcode({cod}:Props) {
 
 
   const navigation = useNavigation();
@@ -16,13 +25,25 @@ export default function Imgcode() {
   
   }
 
+  
+
+
 
 
   return (
       <View style={styles.container}>
-        <Text>CÓDIGO DE AUTENTICIDADE</Text>
-        <QRCode size={200} value="www.paulooctavio.com.br"  ></QRCode>       
-   
+        <Text style={{fontWeight:"bold", marginBottom:10}}>CÓDIGO DE AUTENTICIDADE - {cod}</Text>
+        <QRCode size={200} value={cod}  ></QRCode>    
+
+
+        <View style={{marginTop:15}}>
+        <Button
+              onPress={handleOnPress}
+              title="voltar"
+              color="#76CB98"
+              accessibilityLabel="voltar"
+          />   
+        </View>
     </View>
    
   );
@@ -35,7 +56,13 @@ const styles = StyleSheet.create({
       paddingTop:50,
       flexDirection:'column',
       justifyContent:'center',
-      minHeight:'50%'
+      minHeight:'50%',
+      alignItems: 'center'
+
+  },
+  btt:{
+      marginTop:15
+
   },
   text:{
 

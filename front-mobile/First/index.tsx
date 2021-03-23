@@ -1,7 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, Text, View, Image, Alert } from 'react-native';
+import { StyleSheet, Text, View, Image, Alert, Button } from 'react-native';
 import { RectButton, TextInput } from 'react-native-gesture-handler';
 import { fechCredencial } from '../Api';
 import Footer from '../Footer';
@@ -13,9 +13,9 @@ import { Credencialp } from '../Types';
 
 
 
- function Genqrcode({ route }) {
+ function Fisrt() {
 
- const cd = JSON.stringify(route.params.cod)
+
 
  
   const navigation = useNavigation();
@@ -32,8 +32,14 @@ import { Credencialp } from '../Types';
     <>
      <Header></Header>
      <Subheader></Subheader>
-    <Imgcode cod={cd}></Imgcode>
+      <Text> Seja Bem vindo</Text>
+      <View style={{marginTop:20}} >
 
+        <Button
+         onPress={handleOnPress}
+         title="Credencial"
+        ></Button>
+      </View>
   
 
     </>
@@ -124,4 +130,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default Genqrcode;
+export default Fisrt;

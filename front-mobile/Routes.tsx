@@ -3,6 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import {createStackNavigator} from '@react-navigation/stack'
 import Home from './Home';
 import Genqrcode from './Genqrcode';
+import Fisrt from './First';
 const Stack = createStackNavigator();
 
 function Routes(){
@@ -17,6 +18,7 @@ return (
                     backgroundColor:'#FFF'              }
             }}
         >
+        <Stack.Screen  name="Fisrt" component={Fisrt}></Stack.Screen>
         <Stack.Screen  name="Home" component={Home}></Stack.Screen>
         <Stack.Screen  name="Qrcode" component={Genqrcode}></Stack.Screen>
 
