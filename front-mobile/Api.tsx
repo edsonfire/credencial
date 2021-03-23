@@ -1,18 +1,18 @@
 import axios from "axios"
 
-const API_URL= 'http://192.168.0.107:8080'
+const API_URL= 'http://54.39.67.224:8080'
 
 
 export function fechCredenciais(){
 
-   return  axios(`${API_URL}/decredencial` );
+   return  axios(`${API_URL}/credencial` );
 }
 
 
 
 export function fechCredencial(cred:number){
 
-  return  axios(`${API_URL}/decredencial/${cred}` );
+  return  axios(`${API_URL}/credencial/${cred}` );
 }
 
 export function confirmDelivery(orderId:number){

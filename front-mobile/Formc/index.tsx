@@ -1,14 +1,44 @@
-
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { SafeAreaView,StyleSheet, Text, View, Image, TextInput } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
+import { Credencialp } from '../Types';
+import dayjs from 'dayjs';
+import 'dayjs/locale/pt-br';
+import relativeTime from 'dayjs/plugin/relativeTime';
 
 
 
-export default function Formc(){
+
+dayjs.locale('pt-br');
+dayjs.extend(relativeTime);
+
+
+function dateFromNow(date:string){
+  return dayjs(date).format('DD/MM/YYYY');
+
+}
+
+type Props={
+
+  credencial:Credencialp;
+}
+
+export default function Formc({credencial}:Props){
+
+
+
+  const navigation = useNavigation();
+
+  const handleOnPress = () => {
+    navigation.navigate('Qrcode');
+  
+  }
+
 
         return (
 
-                <>
+                <ScrollView>
                          <View style={styles.container}>
                 <View style={styles.ctitle}><Text style={styles.ctext}>Matrícula</Text></View>
                 <View style={styles.ctitle}><Text style={styles.ctext}>Cargo</Text></View>
@@ -19,9 +49,9 @@ export default function Formc(){
             <View style={styles.container2}>
                   
 
-            <View style={styles.cfield}><Text style={styles.inpt}>123454555</Text></View>     
-            <View style={styles.cfield}><Text style={styles.inpt}>Evangelista</Text></View>
-            <View style={styles.cfield}><Text style={styles.inpt}>15/10/2000</Text></View>              
+            <View style={styles.cfield}><Text style={styles.inpt}>{credencial.matriula}</Text></View>     
+            <View style={styles.cfield}><Text style={styles.inpt}>{credencial.cargo}</Text></View>
+            <View style={styles.cfield}><Text style={styles.inpt}>{dateFromNow(credencial.filiacao)}</Text></View>              
             </View>
 
             <View style={styles.container}>
@@ -32,12 +62,12 @@ export default function Formc(){
               <View style={styles.container2}>
                   
 
-            <View style={styles.cfield1}><Text style={styles.inpt}>Vanilton Vidal</Text></View>     
+            <View style={styles.cfield1}><Text style={styles.inpt}>{credencial.nome}</Text></View>     
          
             </View>
 
-            <View style={{paddingTop:5,width:'99%'}}><Text style={{fontWeight:'bold', paddingLeft:5}}>Estado:</Text></View>
-            <View style={{paddingTop:5,width:'99%'}}><Text style={{fontWeight:'bold', paddingLeft:5}}>Campo:</Text></View>
+            <View style={{paddingTop:5,width:'99%', flexDirection:'row'}}><Text style={{fontWeight:'bold', paddingLeft:5}}>Estado:</Text><Text>{credencial.estado}</Text></View>
+            <View style={{paddingTop:5,width:'99%', flexDirection:'row'}}><Text style={{fontWeight:'bold', paddingLeft:5}}>Campo:</Text><Text>{credencial.campo}</Text></View>
 
 
               
@@ -51,9 +81,9 @@ export default function Formc(){
             <View style={styles.container2}>
                   
 
-            <View style={styles.cfield}><Text style={styles.inpt}>123454555</Text></View>     
-            <View style={styles.cfield}><Text style={styles.inpt}></Text></View>
-            <View style={styles.cfield}><Text style={styles.inpt}></Text></View>              
+            <View style={styles.cfield}><Text style={styles.inpt}>{dateFromNow(credencial.ordenado)}</Text></View>     
+            <View style={styles.cfield}><Text style={styles.inpt}>{dateFromNow(credencial.emissao)}</Text></View>
+            <View style={styles.cfield}><Text style={styles.inpt}>{dateFromNow(credencial.validade)}</Text></View>              
             </View>
 
 
@@ -65,7 +95,7 @@ export default function Formc(){
               <View style={styles.container2}>
                   
 
-            <View style={styles.cfield1}><Text style={styles.inpt}></Text></View>     
+            <View style={styles.cfield1}><Text style={styles.inpt}>{credencial.local}</Text></View>     
          
             </View>
 
@@ -79,21 +109,23 @@ export default function Formc(){
             <View style={styles.container2}>
                   
 
-            <View style={styles.cfield}><Text style={styles.inpt}>123454555</Text></View>     
-            <View style={styles.cfield2}><Text style={styles.inpt}></Text></View>
+            <View style={styles.cfield}><Text style={styles.inpt}>{credencial.estadoCivil}</Text></View>     
+            <View style={styles.cfield2}><Text style={styles.inpt}>{credencial.rg}  {credencial.org_rg}</Text></View>
                   
             </View>
 
-            <View style={{marginTop:5, width:'100%', backgroundColor:'#218638'}}>
-            <Text style={{fontSize:11, fontWeight:'bold', padding:5}}>A CONAMAD solicita às autoridades oficiais e particulares que  dispensem ao portador da presente Credencial todas as facilidades no desempenho de sua função Eclesiástica.</Text>
+            <View style={{marginTop:5, width:'100%', backgroundColor:'#218638'}}  >
+            <Text onPress={handleOnPress} style={{fontSize:11, fontWeight:'bold', padding:5}}>A CONAMAD solicita às autoridades oficiais e particulares que  dispensem ao portador da presente Credencial todas as facilidades no desempenho de sua função Eclesiástica.</Text>
             </View>
 
             <View style={{marginTop:10, width:'100%', flexDirection:'row'}}>
                 <View style={{width:'50%'}}>
+                <Image style={styles.imgass}  source={require('../assets/bispo.png')} ></Image>
                   <Text style={{fontSize:12, textAlign:'center'}}>Bispo Primaz Dr. Manoel Ferreira</Text>
                   <Text style={{fontSize:12, textAlign:'center'}}>Presidente</Text>
                 </View>
-                <View style={{width:'50%'}}>
+                <View style={{width:'50%', justifyContent:'center'}}>
+                <Image style={styles.imgass} source={require('../assets/asssec.png')} ></Image>
                 <Text style={{fontSize:12, textAlign:'center'}}>Pastor Josué de Campos</Text>
                 <Text style={{fontSize:12, textAlign:'center'}}>1º Secretário</Text>
                 </View>
@@ -103,7 +135,7 @@ export default function Formc(){
 
 
 
-                </>
+                </ScrollView>
 
 
         );
@@ -181,8 +213,6 @@ const styles = StyleSheet.create({
       paddingLeft: 5,
       paddingRight:5,
    
-     
-
     }, 
     cfield1:{
       width:'99%',
@@ -227,6 +257,13 @@ const styles = StyleSheet.create({
       fontSize:10,
       paddingLeft:5,
       fontWeight:'bold'
+    },
+    imgass:{
+
+      height:40,
+      width:80,
+      alignSelf:'center'
+      
     }
 
     

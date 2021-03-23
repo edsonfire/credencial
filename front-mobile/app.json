@@ -22,8 +22,9 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      }
+        "backgroundColor": "#F0FAD5"
+      },
+      "package":"com.primedesenv.credencial"
     },
     "web": {
       "favicon": "./assets/favicon.png"

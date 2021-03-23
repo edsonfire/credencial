@@ -2,6 +2,7 @@ import React from 'react';
 import { NavigationContainer } from "@react-navigation/native";
 import {createStackNavigator} from '@react-navigation/stack'
 import Home from './Home';
+import Genqrcode from './Genqrcode';
 const Stack = createStackNavigator();
 
 function Routes(){
@@ -17,7 +18,7 @@ return (
             }}
         >
         <Stack.Screen  name="Home" component={Home}></Stack.Screen>
-
+        <Stack.Screen  name="Qrcode" component={Genqrcode}></Stack.Screen>
 
         </Stack.Navigator>
 

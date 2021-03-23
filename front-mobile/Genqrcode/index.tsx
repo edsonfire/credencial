@@ -7,34 +7,31 @@ import { fechCredencial } from '../Api';
 import Footer from '../Footer';
 import Formc from '../Formc';
 import Header from '../Header';
+import Imgcode from '../Imgcode';
 import Subheader from '../Subheader'
 import { Credencialp } from '../Types';
 
 
 
- function Home() {
+ function Genqrcode() {
 
   const navigation = useNavigation();
 
   const handleOnPress = () => {
-    navigation.navigate('Orders');
+    navigation.navigate('Home');
   
   }
   
-  const [credencialP, setCredencialP] = useState<Credencialp>({nome:"ministro"});
 
-
-  fechCredencial(1)
-  .then(response => setCredencialP(response.data))
-  .catch(error => Alert.alert('Sem conexão com a internet'))
-
+  
 
       return (
     <>
      <Header></Header>
      <Subheader></Subheader>
-        <Formc credencial={credencialP}></Formc>
-    <Footer></Footer>
+    <Imgcode></Imgcode>
+
+  
 
     </>
 
@@ -124,4 +121,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default Home;
+export default Genqrcode;
